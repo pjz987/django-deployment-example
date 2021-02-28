@@ -1,0 +1,42 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+  font-family: 'Antic Slab', serif;
+  background-color: #ECE3FC;
+  color: #2D2738;
+}
+
+main, form {
+  padding: 0 20px;
+}
+
+article {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+#hidden {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  article {
+    width: 45%;
+  }
+  #hidden {
+    display: block;
+  }
+}

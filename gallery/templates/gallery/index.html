@@ -1,13 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
 {% load static %}
-<form method="POST" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Add Photo</button>
-</form>
-{% for photo in gallery %}
-<article>
-  <img src="{{ photo.image.url }}" alt="{{ photo.title }}"/>
-  <h3>{{ photo.title }}</h3>
-  <p>{{ photo.description }}</p>
-</article>
-{% endfor %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="{% static 'gallery/css/style.css' %}"/>
+  <script defer type="text/javascript" src="{% static 'gallery/js/script.js' %}"></script>
+</head>
+<body>
+  <header>
+    <h1>Gallery</h1>
+  </header>
+  <hr>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Photo</button>
+    <hr id="hidden">
+  </form>
+  <main>
+    {% for photo in gallery %}
+    <hr>
+    <article>
+      <img src="{{ photo.image.url }}" alt="{{ photo.title }}"/>
+      <h3>{{ photo.title }}</h3>
+      <p>{{ photo.description }}</p>
+    </article>
+    {% endfor %}
+  </main>
+</body>
+</html>
