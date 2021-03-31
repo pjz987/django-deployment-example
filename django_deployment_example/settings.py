@@ -26,7 +26,7 @@ SECRET_KEY = 'v%emo(z$g+@y8x10szaz=r1osm_bmq6n88sf6ha_tblz4$7^p4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['petes-gallery.herokuapp.com']
 
 
 # Application definition
